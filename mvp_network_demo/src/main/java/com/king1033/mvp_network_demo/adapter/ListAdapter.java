@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
  */
 public class ListAdapter extends BaseAdapter {
     private Context mContext;
-    private List<GiftBean.ListBean> beanList;
+    private List<GiftBean.ListBean> beanList ;
 
     public ListAdapter(List<GiftBean.ListBean> beanList, Context mContext) {
         this.beanList = beanList;
@@ -39,12 +39,12 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return beanList.get(position);
+        return null;
     }
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return 0;
     }
 
     @Override
@@ -52,15 +52,14 @@ public class ListAdapter extends BaseAdapter {
         View view = convertView;
         ViewHolder viewHolder = null;
         if (view == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.item_gift_view, parent, false);
+            view = LayoutInflater.from(mContext).inflate(R.layout.item_gift_view,parent,false);
             viewHolder = new ViewHolder(view);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         GiftBean.ListBean listBean = beanList.get(position);
         viewHolder.mTitleTxt.setText(listBean.getGname());
-        //使用Picasso框架加载图片
-        Picasso.with(mContext).load(HttpUtils.BASE_URL + listBean.getIconurl()).into(viewHolder.mImageView);
+        Picasso.with(mContext).load(HttpUtils.BASE_URL+listBean.getIconurl()).into(viewHolder.mImageView);
         return view;
     }
 
@@ -69,10 +68,9 @@ public class ListAdapter extends BaseAdapter {
         ImageView mImageView;
         @BindView(R.id.gift_item_title_txt)
         TextView mTitleTxt;
-
         public ViewHolder(View view) {
             view.setTag(this);
-            ButterKnife.bind(this, view);
+            ButterKnife.bind(this,view);
         }
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public interface IView {
     /**
      * 刷新适配器更新视图
-     * @param listBeen
+     * @param listBeens
      */
-    void refreshListView(List<GiftBean.ListBean>listBeen);
+    void refreshListView(List<GiftBean.ListBean> listBeens);
 }

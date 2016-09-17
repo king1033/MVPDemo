@@ -17,8 +17,8 @@ public interface IPresenter {
     /**
      * 接口回调：用于接收网络请求之后的所获取的数据
      */
-    interface Callback{
-        void success(GiftBean giftBean);
+    interface Callback {
+        void success(GiftBean giftbean);
     }
 
 }

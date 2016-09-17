@@ -12,24 +12,24 @@ import com.king1033.mvp_network_demo.view.IView;
  * @Time:2016/9/9
  */
 public class PresenterImpl implements IPresenter,IPresenter.Callback{
-    IModle mModle;
-    IView mView;
+    IModle mGiftModel;
+    IView mGiftView;
 
     public PresenterImpl(IView giftView) {
-        this.mModle = new ModleImpl();
-        this.mView = giftView;
+        this.mGiftModel = new ModleImpl();
+        this.mGiftView = giftView;
     }
 
     @Override
     public void getGiftList(int pageno) {
-        mModle.queryGiftList(pageno,this);
+        mGiftModel.queryGiftList(pageno,this);
     }
 
-    //通知适配器刷新视图
     @Override
-    public void success(GiftBean giftBean) {
-        if (giftBean == null) {
-            mView.refreshListView(giftBean.getList());
+    public void success(GiftBean giftbean) {
+        //通知适配器刷新视图
+        if (giftbean != null) {
+            mGiftView.refreshListView(giftbean.getList());
         }
     }
 }

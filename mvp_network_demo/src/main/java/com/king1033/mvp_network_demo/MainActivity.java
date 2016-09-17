@@ -21,28 +21,28 @@ public class MainActivity extends AppCompatActivity implements IView {
     @BindView(R.id.gift_list)
     ListView mListView;
 
-    private List<GiftBean.ListBean>beanList = new ArrayList<>();
-    private ListAdapter mListAdapter;
-    private IPresenter mPresenter;
+    private List<GiftBean.ListBean> beanList = new ArrayList<>();
+    private ListAdapter mGiftListAdapter;
+    private IPresenter mGiftPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mPresenter = new PresenterImpl(this);
+        mGiftPresenter = new PresenterImpl(this);
         setupListView();
-        mPresenter.getGiftList(1);
+        mGiftPresenter.getGiftList(1);
     }
 
     private void setupListView() {
-        mListAdapter = new ListAdapter(beanList, this);
-        mListView.setAdapter(mListAdapter);
+        mGiftListAdapter = new ListAdapter(beanList,this);
+        mListView.setAdapter(mGiftListAdapter);
     }
 
     @Override
-    public void refreshListView(List<GiftBean.ListBean> listBeen) {
-        beanList.addAll(listBeen);
-        mListAdapter.notifyDataSetChanged();
+    public void refreshListView(List<GiftBean.ListBean> listBeens) {
+        beanList.addAll(listBeens);
+        mGiftListAdapter.notifyDataSetChanged();
     }
 }

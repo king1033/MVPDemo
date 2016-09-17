@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @Time:2016/9/7
  */
 public class HttpUtils {
-    public static final String BASE_URL ="http://www.1688wan.com";
+    public static final String BASE_URL = "http://www.1688wan.com";
     private static HttpService mHttpService;
 
     public static HttpService create() {
