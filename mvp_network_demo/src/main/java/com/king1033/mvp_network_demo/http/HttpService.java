@@ -16,8 +16,8 @@ public interface HttpService {
     //网址：http://www.1688wan.com/majax.action?method=getGiftList
     @Deprecated
     @POST("/majax.action?method=getGiftList")
-    Call<GiftBean>queryGift(@Query("pageno")int num);
+    Call<GiftBean> queryGift(@Query("pageno") int num);
 
     @POST("/majax.action?method=getGiftList")
-    Observable<GiftBean>queryGift2(@Query("pageno")int num);
+    Observable<GiftBean> queryGift2(@Query("pageno") int num);
 }

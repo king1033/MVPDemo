@@ -11,13 +11,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @Time:2016/9/7
  */
 public class HttpUtils {
-    public static final String BAER_URL="http://www.1688wan.com";
+    public static final String BASE_URL ="http://www.1688wan.com";
     private static HttpService mHttpService;
 
-    public static HttpService create(){
-        if (BAER_URL == null) {
+    public static HttpService create() {
+        if (mHttpService == null) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(BAER_URL)
+                    .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();

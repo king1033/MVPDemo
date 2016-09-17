@@ -15,9 +15,9 @@ public class PresenterImpl implements IPresenter,IPresenter.Callback{
     IModle mModle;
     IView mView;
 
-    public PresenterImpl(IView mView) {
+    public PresenterImpl(IView giftView) {
         this.mModle = new ModleImpl();
-        this.mView = mView;
+        this.mView = giftView;
     }
 
     @Override

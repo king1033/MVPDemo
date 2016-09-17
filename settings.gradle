@@ -1,1 +1,1 @@
-include ':app', ':mvp_network_demo'
+include ':app', ':mvp_network_demo', ':refreshlibrary'

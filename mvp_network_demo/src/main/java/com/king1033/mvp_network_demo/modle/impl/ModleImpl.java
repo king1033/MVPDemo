@@ -21,9 +21,9 @@ public class ModleImpl implements IModle {
 
     @Override
     public void queryGiftList(int pageno, final IPresenter.Callback callback) {
-//        /**
-//         * retrofit2的使用
-//         */
+        /**
+         * retrofit2的使用
+         */
 //        HttpUtils.create().queryGift(pageno).enqueue(new Callback<GiftBean>() {
 //            @Override
 //            public void onResponse(Call<GiftBean> call, Response<GiftBean> response) {
